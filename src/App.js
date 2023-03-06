@@ -83,16 +83,14 @@ function App() {
           </button>
         </div>
       </div>
-      <div className="img-container">
-        {res.length === 0 ? (
-          <div className="no-image-container">
-            <h3 className="no-images-copy">No image found</h3>
-            <p className="try-new-search-copy">
-              Try searching for trees or beach
-            </p>
-          </div>
-        ) : (
-          res.map((val) => {
+      {res.length === 0 ? (
+        <div className="no-image-container">
+          <h2 className="no-images-copy">No image found</h2>
+          <p className="try-new-search-copy">Try searching for <b>tree</b> or <b>beach</b></p>
+        </div>
+      ) : (
+        <div className="img-container">
+          {res.map((val) => {
             return (
               <div className="img-inter">
                 <img
@@ -107,9 +105,9 @@ function App() {
                 />
               </div>
             );
-          })
-        )}
-      </div>
+          })}
+        </div>
+      )}
       {preview && (
         <PreviewImage
           src={preview.src}
@@ -120,5 +118,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
