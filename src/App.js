@@ -51,7 +51,7 @@ function App() {
   const openPreview = (src, alt) => {
     setPreview({
       src,
-      alt
+      alt,
     });
   };
 
@@ -63,13 +63,11 @@ function App() {
     <div className="App">
       <div className="header">
         <div className="title-full">
-        <i
-              className="fa fa-camera-retro"
-              style={{ marginRight: "0.5rem" }}
-            ></i>
-          <h1 className="title">
-            React Image Search
-          </h1>
+          <i
+            className="fa fa-camera-retro"
+            style={{ marginRight: "0.5rem" }}
+          ></i>
+          <h1 className="title">React Image Search</h1>
         </div>
         <div className="form">
           <input
@@ -86,20 +84,31 @@ function App() {
         </div>
       </div>
       <div className="img-container">
-        {res.map((val) => {
-          return (
-            <div className="img-inter">
-              <img
-                className="img-thumbnail"
-                src={val.urls.small}
-                alt={val.alt_description}
-                width="20%"
-                height="20%"
-                onClick={() => openPreview(val.urls.regular, val.alt_description)}
-              />
-            </div>
-          );
-        })}
+        {res.length === 0 ? (
+          <div className="no-image-container">
+            <h3 className="no-images-copy">No image found</h3>
+            <p className="try-new-search-copy">
+              Try searching for trees or beach
+            </p>
+          </div>
+        ) : (
+          res.map((val) => {
+            return (
+              <div className="img-inter">
+                <img
+                  className="img-thumbnail"
+                  src={val.urls.small}
+                  alt={val.alt_description}
+                  width="20%"
+                  height="20%"
+                  onClick={() =>
+                    openPreview(val.urls.regular, val.alt_description)
+                  }
+                />
+              </div>
+            );
+          })
+        )}
       </div>
       {preview && (
         <PreviewImage
