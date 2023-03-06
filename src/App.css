@@ -1,0 +1,179 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+}
+
+.title-full {
+  font-size: 0.7rem;
+  color: #3c3c3c;
+  display: flex;
+  align-items: center;
+}
+
+i {
+  font-size: 1.2rem;
+}
+
+.title {
+  letter-spacing: -0.5px;
+}
+
+/* .form {
+  display: flex;
+  align-items: center;
+} */
+
+.input {
+  border-radius: 1rem;
+  outline: none;
+  margin-right: 1rem;
+  height: 1.5rem;
+  width: 20rem;
+  padding: 0 0.9em;
+  border: 0.2mm solid;
+}
+
+button {
+  border-radius: 1rem;
+  border: none;
+  height: 1.7rem;
+  width: 5rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+.img-container {
+  column-count: 3;
+  padding: 0 3rem;
+}
+
+.img-inter {
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.img-thumbnail {
+  flex: 100%;
+  margin-top: 0rem;
+  cursor: pointer;
+}
+
+footer {
+  margin: 0.6rem;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+/* 
+.preview-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-image {
+  
+} */
+
+.preview-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+
+.preview-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  
+}
+
+.preview-image img {
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ffffff90;
+  color: black;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  height: 1.5rem;
+  width: 1.5rem;;
+  padding: 0 0 0.1rem 0;
+  font-size: 1.2rem;
+}
+
+.close-button:hover {
+  background-color: white;
+  color: black;
+}
+
+
+
+
+@media screen and (max-width: 800px) {
+  .img-container {
+    column-count: 2;
+  }
+  .input {
+    width: 20rem;
+  }
+  .title {
+    display: none;
+  }
+  .header {
+    margin: 1rem 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .img-container {
+    column-count: 1;
+  }
+  .input {
+    width: 15rem;
+  }
+  .title {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .img-container {
+    column-count: 1;
+  }
+  .input {
+    width: 12rem;
+  }
+  .title {
+    display: none;
+  }
+  .header {
+    margin: 1rem 0;
+  }
+}
