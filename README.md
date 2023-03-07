@@ -3,5 +3,5 @@
 A simple Image Search app using the Unsplash API
 
 ## Features
-• Search images by keyword using the Unsplash library
+• Search images by keywords using the Unsplash library
 

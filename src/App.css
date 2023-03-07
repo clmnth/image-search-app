@@ -59,12 +59,7 @@ button:hover {
   cursor: pointer;
 }
 
-footer {
-  margin: 0.6rem;
-  text-align: center;
-  font-size: 0.7rem;
-  font-weight: bold;
-}
+
 
 .preview-overlay {
   position: fixed;
@@ -128,6 +123,17 @@ footer {
 .try-new-search-copy {
   font-size: 1.2rem;
   color: rgb(86, 86, 86);
+}
+
+footer {
+  margin: 0.6rem;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.fa-code {
+  font-size: 0.7rem;
 }
 
 @media screen and (max-width: 800px) {

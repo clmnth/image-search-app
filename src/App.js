@@ -87,7 +87,7 @@ function App() {
         <div className="no-image-container">
           <h2 className="no-images-copy">No image found</h2>
           <p className="try-new-search-copy">
-            Try searching for <b>tree</b> or <b>beach</b>
+            Try searching for <b>trees</b> or <b>cats</b>
           </p>
         </div>
       ) : (
