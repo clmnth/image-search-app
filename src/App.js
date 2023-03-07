@@ -86,7 +86,9 @@ function App() {
       {res.length === 0 ? (
         <div className="no-image-container">
           <h2 className="no-images-copy">No image found</h2>
-          <p className="try-new-search-copy">Try searching for <b>tree</b> or <b>beach</b></p>
+          <p className="try-new-search-copy">
+            Try searching for <b>tree</b> or <b>beach</b>
+          </p>
         </div>
       ) : (
         <div className="img-container">
@@ -118,6 +120,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;
