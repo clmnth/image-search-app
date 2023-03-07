@@ -24,7 +24,7 @@ function App() {
 
   const fetchRandomPhotos = async () => {
     const data = await fetch(
-      `https://api.unsplash.com/photos/random?count=10&client_id=${apiKey}`
+      `https://api.unsplash.com/photos/random?count=20&client_id=${apiKey}`
     );
     const dataJ = await data.json();
     const result = dataJ;

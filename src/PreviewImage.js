@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function PreviewImage({ src, alt, onClose, author }) {
+function PreviewImage({ src, alt, onClose }) {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   const handleImageLoad = () => {
