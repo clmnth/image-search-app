@@ -1,9 +1,10 @@
-import "./App.css";
+import "./App-test.css";
 import React, { useState, useEffect } from "react";
-import config from "./config";
+// import config from "./config";
 import PreviewImage from "./PreviewImage";
+import mockAPI from "./mockAPI"; // to be deleted
 
-const apiKey = config.API_KEY;
+// const apiKey = config.API_KEY;
 
 function App() {
   const [img, setImg] = useState("");
@@ -12,23 +13,25 @@ function App() {
 
   const fetchRequest = async () => {
     if (img) {
-      const data = await fetch(
-        `https://api.unsplash.com/search/photos?page=1&query=${img}&client_id=${apiKey}`
-      );
-      const dataJ = await data.json();
-      const result = dataJ.results;
-      console.log(result);
-      setRes(result);
+      // const data = await fetch(
+      //   `https://api.unsplash.com/search/photos?page=1&query=${img}&client_id=${apiKey}`
+      // );
+      // const dataJ = await data.json();
+      // const result = dataJ.results;
+      // console.log(result);
+      // setRes(result);
+      setRes(mockAPI); // to be deleted
     }
   };
 
   const fetchRandomPhotos = async () => {
-    const data = await fetch(
-      `https://api.unsplash.com/photos/random?count=20&client_id=${apiKey}`
-    );
-    const dataJ = await data.json();
-    const result = dataJ;
-    setRes(result);
+    // const data = await fetch(
+    //   `https://api.unsplash.com/photos/random?count=20&client_id=${apiKey}`
+    // );
+    // const dataJ = await data.json();
+    // const result = dataJ;
+    // setRes(result);
+    setRes(mockAPI); // to be deleted
   };
 
   useEffect(() => {
@@ -91,20 +94,40 @@ function App() {
           </p>
         </div>
       ) : (
-        <div className="img-container">
+        <div className="img-great-container">
           {res.map((val) => {
             return (
-              <div className="img-inter">
-                <img
-                  className="img-thumbnail"
-                  src={val.urls.small}
-                  alt={val.alt_description}
-                  width="20%"
-                  height="20%"
-                  onClick={() =>
-                    openPreview(val.urls.regular, val.alt_description)
-                  }
-                />
+              <div className="img-profile-container">
+                
+                  <img
+                    className="img-thumbnail"
+                    src={val.urls.small}
+                    alt={val.alt_description}
+                    width="100%"
+                    height="100%"
+                    onClick={() =>
+                      openPreview(val.urls.regular, val.alt_description)
+                    }
+                  />
+               
+                <div className="author-info">
+                  <div className="author-profile-name">
+                    <img
+                      className="author-profile-picture"
+                      src={val.user.profile_image.small}
+                      alt={val.user.name}
+                    />
+                    <a
+                      className="author-name"
+                      href={val.user.links.html}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {val.user.name}
+                    </a>
+                  </div>
+                </div>
+
               </div>
             );
           })}
