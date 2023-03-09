@@ -47,10 +47,9 @@ button:hover {
 
 .img-container {
   column-count: 3;
-  padding: 0 3rem; 
+  padding: 0 3rem;
   background-color: violet;
   height: auto;
-
 
   width: auto;
   /* display: flex; */
@@ -64,15 +63,14 @@ button:hover {
   margin-bottom: 1rem; */
   /* margin-bottom: 1rem; */
   /* position: relative;  */
-  margin-bottom: 1rem;;
-  
+  margin-bottom: 1rem;
+
   height: auto;
 }
 
 .img-thumbnail {
   cursor: pointer;
   /* max-width: 100%; */
-  
 }
 
 /* 
@@ -92,15 +90,13 @@ button:hover {
   height: auto;
   background-color: blue;
   align-items: center;
-  position: relative; 
+  position: relative;
   width: 100%;
 
-
-
   align-items: flex-start; /* doesn't do anything */
-  
+
   /* position: absolute; */
-  
+
   /* left: auto; */
   /* transform: translateX(0%); */
 }
