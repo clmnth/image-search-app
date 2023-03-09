@@ -94,22 +94,21 @@ function App() {
           </p>
         </div>
       ) : (
-        <div className="img-great-container">
+        <div className="img-container">
           {res.map((val) => {
             return (
               <div className="img-profile-container">
-                
-                  <img
-                    className="img-thumbnail"
-                    src={val.urls.small}
-                    alt={val.alt_description}
-                    width="100%"
-                    height="100%"
-                    onClick={() =>
-                      openPreview(val.urls.regular, val.alt_description)
-                    }
-                  />
-               
+                <img
+                  className="img-thumbnail"
+                  src={val.urls.small}
+                  alt={val.alt_description}
+                  width="100%"
+                  height="100%"
+                  onClick={() =>
+                    openPreview(val.urls.regular, val.alt_description)
+                  }
+                />
+
                 <div className="author-info">
                   <div className="author-profile-name">
                     <img
@@ -127,7 +126,6 @@ function App() {
                     </a>
                   </div>
                 </div>
-
               </div>
             );
           })}
