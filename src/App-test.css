@@ -48,16 +48,13 @@
 .img-great-container {
   background-color: blue;
   column-count: 3;
-  column-gap: 1rem; /* set the space between columns */
-   
-  height: auto;
-  
+  margin: 0 3rem;;
+  /* height: auto; */
 }
 
-
+/* 
 
  .img-profile-container {
-   /* break-inside: avoid-column; */
    background-color: red;
    break-inside: avoid-column;
    margin-bottom: auto;
@@ -99,18 +96,47 @@
  
  .author-name:hover {
    color: #111;
- }
+ } */
+ @media screen and (max-width: 831px) {
+  .img-great-container {
+    column-count: 2;
+  }
+  .input {
+    width: 20rem;
+  }
+  .title {
+    display: none;
+  }
+  .header {
+    margin: 1rem 0;
+  }
+}
 
- @media screen and (max-width: 831px) { 
-   .img-container {
-      column-count: 2;
-    }
- }
+@media screen and (max-width: 600px) {
+  .img-great-container {
+    column-count: 1;
+  }
+  .input {
+    width: 15rem;
+  }
+  .title {
+    display: none;
+  }
+}
 
- @media screen and (max-width: 650px) {
-   .img-container {
-     column-count: 1;
-   }
+@media screen and (max-width: 520px) {
+  .img-great-container {
+    column-count: 1;
+  }
+  .input {
+    width: 12rem;
+  }
+  .title {
+    display: none;
+  }
+  .header {
+    margin: 1rem 0;
+  }
 }
 
 /* 
