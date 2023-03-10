@@ -1,37 +1,42 @@
-import "./App-test.css";
+import "./App.css";
 import React, { useState, useEffect } from "react";
-// import config from "./config";
+import config from "./config";
 import PreviewImage from "./PreviewImage";
-import mockAPI from "./mockAPI"; // to be deleted
+// import mockAPI from "./mockAPI"; // Mock API
 
-// const apiKey = config.API_KEY;
+const apiKey = config.API_KEY;
 
 function App() {
   const [img, setImg] = useState("");
   const [res, setRes] = useState([]);
   const [preview, setPreview] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const fetchRequest = async () => {
     if (img) {
-      // const data = await fetch(
-      //   `https://api.unsplash.com/search/photos?page=1&query=${img}&client_id=${apiKey}`
-      // );
-      // const dataJ = await data.json();
-      // const result = dataJ.results;
-      // console.log(result);
-      // setRes(result);
-      setRes(mockAPI); // to be deleted
+      setLoading(true);
+      const data = await fetch(
+        `https://api.unsplash.com/search/photos?page=&query=${img}&client_id=${apiKey}&per_page=20`
+      );
+      const dataJ = await data.json();
+      const result = dataJ.results;
+      console.log(result);
+      setRes(result);
+      setLoading(false);
+      // setRes(mockAPI); // Mock API
     }
   };
 
   const fetchRandomPhotos = async () => {
-    // const data = await fetch(
-    //   `https://api.unsplash.com/photos/random?count=20&client_id=${apiKey}`
-    // );
-    // const dataJ = await data.json();
-    // const result = dataJ;
-    // setRes(result);
-    setRes(mockAPI); // to be deleted
+    setLoading(true);
+    const data = await fetch(
+      `https://api.unsplash.com/photos/random?count=20&client_id=${apiKey}`
+    );
+    const dataJ = await data.json();
+    const result = dataJ;
+    setRes(result);
+    setLoading(false);
+    // setRes(mockAPI); // Mock API
   };
 
   useEffect(() => {
@@ -86,9 +91,13 @@ function App() {
           </button>
         </div>
       </div>
-      {res.length === 0 ? (
+      {loading ? (
         <div className="no-image-container">
-          <h2 className="no-images-copy">No image found</h2>
+          <h2 className="no-images-copy-loading">Loading...</h2>
+        </div>
+      ) : res.length === 0 ? (
+        <div className="no-image-container">
+          <h2 className="no-images-copy">No images found</h2>
           <p className="try-new-search-copy">
             Try searching for <b>trees</b> or <b>cats</b>
           </p>
@@ -108,7 +117,6 @@ function App() {
                     openPreview(val.urls.regular, val.alt_description)
                   }
                 />
-
                 <div className="author-info">
                   <div className="author-profile-name">
                     <img
@@ -123,6 +131,14 @@ function App() {
                       rel="noopener noreferrer"
                     >
                       {val.user.name}
+                    </a>
+                    <a
+                      href={val.urls.regular}
+                      download
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i className="fa fa-arrow-down" aria-hidden="true"></i>
                     </a>
                   </div>
                 </div>
