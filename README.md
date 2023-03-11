@@ -1,6 +1,7 @@
 # React Image Search App
 
 A simple Image Search app using the Unsplash API.
+<br />
 Live: https://clmnth.github.io/image-search-app/
 
 ## Features
